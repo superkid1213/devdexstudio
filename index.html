@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Roblox Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "nipplejs": "https://esm.sh/nipplejs",
+        "blockly": "https://esm.sh/blockly@8.0.0"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Preloader shown during registration/site load; displays the Game Title from Properties -->
+  <div id="preloader" aria-hidden="false">
+    <div class="preloader-card">
+      <div id="preloader-logo" class="preloader-logo">Title</div>
+      <div class="preloader-title" id="preloader-title">Loading Game...</div>
+      <div class="preloader-spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div id="app">
+    <!-- Left: Toolbox + Explorer -->
+    <section class="panel panel-left">
+      <div class="panel-section">
+        <div class="panel-header">Toolbox</div>
+        <div class="toolbox-items">
+          <button class="toolbox-item" data-type="block">Block</button>
+          <button class="toolbox-item" data-type="platform">Platform</button>
+          <button class="toolbox-item" data-type="spawn">Spawn</button>
+          <button class="toolbox-item" data-type="sword">Sword</button>
+          <button class="toolbox-item" data-type="blaster">Blaster</button>
+          <button class="toolbox-item" data-type="npc">NPC</button>
+          <button class="toolbox-item" data-type="light">Light</button>
+          <button class="toolbox-item" data-type="iframe">Iframe Block</button>
+          <button class="toolbox-item" data-type="colliding">Colliding Block</button>
+          <button class="toolbox-item" data-type="triggerpart">TriggerPart</button>
+        </div>
+      </div>
+      <div class="panel-section panel-scroll">
+        <div class="panel-header">Explorer</div>
+        <ul id="explorer-list" class="explorer-list"></ul>
+      </div>
+
+      <div class="panel-section panel-scroll">
+        <div class="panel-header">Coding</div>
+        <div id="coding-area" class="coding-area">
+          <!-- Blockly workspace will be injected here -->
+          <div id="blocklyDiv" style="width:100%;height:320px;"></div>
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <button id="run-blocks" class="toolbox-item" style="flex:1">Run</button>
+            <button id="export-blocks" class="toolbox-item" style="flex:1">Export</button>
